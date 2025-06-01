@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MRK India - Watch TV Shows Online, Watch Movies Online</title>
+    <link
+      rel="icon"
+      href="https://t4.ftcdn.net/jpg/05/23/15/69/360_F_523156902_445BkTzOZ2bc4EltqiZjYye7YnHy2cvS.jpg"
+    />
+    
+  </head>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  background: #0c111b;
+  position: relative;
+  font-family: roboto, sans-serif;
+}
+
+.navbar {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 4%;
+  background: #0c111b;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo {
+  height: 70px;
+}
+
+.nav-links {
+  margin-top: 10px;
+  display: flex;
+  list-style: none;
+}
+
+.nav-items a {
+  text-decoration: none;
+  margin-left: 20px;
+  text-transform: capitalize;
+  color: #fff;
+  opacity: 0.9;
+}
+
+.right-container {
+  display: block;
+  margin-left: auto;
+}
+
+.search-box {
+  border: none;
+  border-bottom: 1px solid #aaa;
+  background: transparent;
+  outline: none;
+  height: 30px;
+  color: #fff;
+  width: 250px;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.5s;
+}
+
+.search-box:focus {
+  width: 400px;
+  border-color: #1f80e0;
+}
+
+.sub-btn {
+  background: #1f80e0;
+  height: 30px;
+  padding: 0 20px;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+  margin: 0 10px;
+}
+
+.login-link {
+  color: #fff;
+  opacity: 0.9;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  padding: 20px 0;
+  overflow-x: hidden;
+  margin-top: 80px;
+}
+
+.carousel {
+  display: flex;
+  width: 92%;
+  height: 100%;
+  position: relative;
+  margin: auto;
+}
+
+.slider {
+  flex: 0 0 auto;
+  margin-right: 30px;
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  transition: 1s;
+  overflow: hidden;
+}
+
+.slider img {
+  width: 70%;
+  min-height: 100%;
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+}
+
+.slide-content {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(to right, #030b17 80%, #0c111b00);
+  color: #fff;
+}
+
+.movie-title {
+  padding-left: 50px;
+  text-transform: capitalize;
+  margin-top: 80px;
+}
+
+.movie-des {
+  width: 80%;
+  line-height: 30px;
+  padding-left: 50px;
+  margin-top: 30px;
+  opacity: 0.8;
+}
+
+.video-card-container {
+  position: relative;
+  width: 92%;
+  margin: auto;
+  height: 10vw;
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+.video-card {
+  position: relative;
+  min-width: calc(100% / 5 - 10px);
+  width: calc(100% / 5 - 10px);
+  height: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #030b17;
+}
+
+.video-card-image,
+.card-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-video {
+  position: absolute;
+}
+
+.video-card:hover .video-card-image {
+  display: none;
+}
+
+.title {
+  color: #fff;
+  opacity: 0.9;
+  padding-left: 4%;
+  text-transform: capitalize;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.movies-list {
+  width: 100%;
+  height: 220px;
+  position: relative;
+  margin: 10px 0 20px;
+}
+
+.card-container {
+  position: relative;
+  width: 92%;
+  padding-left: 10px;
+  height: 150%;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: visible;
+  scroll-behavior: smooth;
+}
+
+.card-container::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  position: relative;
+  min-width: 200px;
+  width: 100px;
+  height: 300px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-right: 10px;
+  transition: 0.5s;
+  text-align: center;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card:hover .card-body {
+  opacity: 1;
+}
+
+.card-body {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: linear-gradient(to bottom, rgba(4, 8, 15, 0), #192133 90%);
+  padding: 10px;
+  transition: 0.5s;
+}
+
+.name {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-top: 120%;
+}
+
+.des {
+  color: #fff;
+  opacity: 0.8;
+  margin-top: -10%;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.watchlist-btn {
+  position: relative;
+  width: 100%;
+  text-transform: capitalize;
+  background: none;
+  border: none;
+  font-weight: 500;
+  text-align: center;
+  margin-top: -40%;
+  color: rgb(255, 255, 255);
+  margin: 5px 0;
+  cursor: pointer;
+  padding: 10px 5px;
+  border-radius: 5px;
+}
+
+.watchlist-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -5px;
+  height: 35px;
+  width: 35px;
+  background-image: url(add.png);
+  background-size: cover;
+  transform: scale(0.4);
+}
+
+.watchlist-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.pre-btn,
+.nxt-btn {
+  position: absolute;
+  top: 0;
+  width: 5%;
+  height: 100%;
+  z-index: 2;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.pre-btn {
+  left: 0;
+  background: linear-gradient(to right, #0c111b 0%, #0c111b00);
+}
+
+.nxt-btn {
+  right: 0;
+  background: linear-gradient(to left, #0c111b 0%, #0c111b00);
+}
+
+.pre-btn img,
+.nxt-btn img {
+  width: 15px;
+  height: 20px;
+  opacity: 0;
+}
+
+.pre-btn:hover img,
+.nxt-btn:hover img {
+  opacity: 1;
+}
+  </style>
+  <body>
+    <nav class="navbar">
+      <img src="logo.png" class="brand-logo" alt="" />
+      <ul class="nav-links">
+        <li class="nav-items"> <a href="https://t4.ftcdn.net/jpg/05/23/15/69/360_F_523156902_445BkTzOZ2bc4EltqiZjYye7YnHy2cvS.jpg"></a></li>
+        <li class="nav-items"><a href="#carousel-container">Home</a></li>
+        <li class="nav-items"><a href="#title">movies</a></li>
+        <li class="nav-items"><a href="#title"></a></li>
+        <li class="nav-items"><a href="#title">premium</a></li>
+
+      </ul>
+      <div class="right-container">
+        <input type="text" class="search-box" placeholder="search" />
+        <button class="sub-btn" onclick="goToMoviePage('subscribe.html')">subscribe</button>
+        <a href="@Login.html" class="login-link">login</a>
+      </div>
+    </nav>
+    <div id="carousel-container" class="carousel-container">
+      <div class="carousel">
+        <!--<div class="slider">
+          <div class="slide-content">
+            <h1 class="movie-title">OG</h1>
+            <p class="movie-des">
+              This is Clone Of Disney+ Hotstar designed by S. Gargee 3rd year B TEch student of NIT Jalandhar.
+            </p>
+          </div>
+          <img src="https://m.media-amazon.com/images/M/MV5BNjVhNzlmNGEtN2NlNC00ZjU3LWEyMDktM2NmODg3NzhlMjRkXkEyXkFqcGc@._V1_QL75_UX386_.jpg" alt="" >
+        </div> -->
+      </div>
+    </div>
+    <div class="video-card-container">
+      <div class="video-card">
+        <img src="img1.png" class="video-card-image" alt="" />
+        <video src="https://img10.hotstar.com/video/upload/sources/r1/cms/animations/qh3yh_1587393133132" muted loop class="card-video"></video>
+      </div>
+      <div class="video-card">
+        <img src="img2.png" class="video-card-image" alt="" />
+        <video src="https://img10.hotstar.com/video/upload/sources/r1/cms/animations/a6lr0r_1587393331483" muted loop class="card-video"></video>
+      </div>
+      <div class="video-card">
+        <img src="img3.png" class="video-card-image" alt="" />
+        <video src="https://img10.hotstar.com/video/upload/sources/r1/cms/animations/1on5cf_1587393232549" muted loop class="card-video"></video>
+      </div>
+      <div class="video-card">
+        <img src="img4.png" class="video-card-image" alt="" />
+        <video src="https://img10.hotstar.com/video/upload/sources/r1/cms/animations/utwmfd_1587393376512" muted loop class="card-video"></video>
+      </div>
+      <div class="video-card">
+        <img src="img5.png" class="video-card-image" alt="" />
+        <video src="https://img10.hotstar.com/video/upload/sources/r1/cms/animations/ojerhm_1587393280208" muted loop class="card-video"></video>
+      </div>
+    </div>
+    <h1 id="title" class="title">recommended for you</h1>
+    <div class="movies-list">
+      <button class="pre-btn" title="btn"><img src="pre.png" alt="" /></button>
+      <button class="nxt-btn" title="btn"><img src="nxt.png" alt="" /></button>
+      <div class="card-container">
+        <div class="card">
+          <img  src="https://neplych.com/wp-content/uploads/2024/03/OG-Movie-Photo-12.jpg"  class="card-img" alt="" />
+          <div class="card-body">
+            <h3 class="name"><b>OG</b></h3>
+            
+            <button class="watchlist-btn" onclick="goToMoviePage('m1.html')">Watch</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://www.themoviedb.org/t/p/original/cQpv74vstOxFDz0ha1I1SxJAlOj.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">KALKI 2898-AD</h2>
+            <button class="watchlist-btn" onclick="goToMoviePage('m2.html')">Watch</button>
+
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://m.media-amazon.com/images/M/MV5BYTY4NjM0NmUtY2JmMS00MWQ0LThmNjgtYjkyNzczMTI2Njc0XkEyXkFqcGdeQXVyMTQ3Mzk2MDg4._V1_QL75_UX820_.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Devara Part 1</h2>
+            <button class="watchlist-btn" onclick="goToMoviePage('m3.html')">Watch</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://moviegalleri.net/wp-content/gallery/jersey-movie-posters-hd/jersey-movie-posters-hd-nani-shraddha-srinath-4d5c9d5.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Jersey</h2>
+            <button class="watchlist-btn" onclick="goToMoviePage('m4.html')">Watch</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://i1.wp.com/www.socialnews.xyz/wp-content/uploads/2018/08/08/mahesh-babu-s-25th-film-maharshi-first-look-hd-poster-.jpg?fit=1714%2C2400&quality=80&zoom=1&ssl=1" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name"> maharshi</h2>
+            <button class="watchlist-btn" onclick="goToMoviePage('m5.html')">Watch</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://wallpapercave.com/wp/wp11372839.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">seetha ramam </h2>
+            <button class="watchlist-btn" onclick="goToMoviePage('m6.html')">Watch</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://flxt.tmsimg.com/assets/p17206807_p_v8_aa.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Rakshasudu</h2>
+            <button class="watchlist-btn" onclick="goToMoviePage('m7.html')">Watch</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://wallpapercave.com/wp/wp8502929.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">ee nagaraniki emaindi</h2>
+            <button class="watchlist-btn" onclick="goToMoviePage('m8.html')">Watch</button>
+          </div>
+        </div> 
+       </div>
+      </div>
+    </div><br><br><br><br><br><br>
+    <h1 id="title" class="title">Popular Movies</h1>
+    <div class="movies-list">
+      <button class="pre-btn" title="btn"><img src="pre.png" alt="" /></button>
+      <button class="nxt-btn" title="btn"><img src="nxt.png" alt="" /></button>
+      <div class="card-container">
+        <div class="card">
+          <img src="https://moviegalleri.net/wp-content/uploads/2022/08/Rajinikanth-Jailer-Movie-First-Look-Poster-HD-1311x2048.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Jailer</h2>
+            <button class="watchlist-btn" onclick="goToMoviePage('m11.html')">Watch</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://static1.showtimes.com/poster/660x980/animal-174150.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Animal</h2>
+            <button class="watchlist-btn" onclick="goToMoviePage('m12.html')">Watch</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://nettv4u.com/uploads/07-08-2021/kantara-movie-review.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">kantara</h2>
+            <button class="watchlist-btn" onclick="goToMoviePage('m13.html')">Watch</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://filmfare.wwmindia.com/content/2023/sep/salaar11695982515.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Salaar</h2>
+            <button class="watchlist-btn" onclick="goToMoviePage('m14.html')">Watch</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/66ab0972-ff05-4650-9a8e-975bf16fe079/dennqn4-5ac4dddb-291c-42fd-b21e-3330b0831d3f.jpg/v1/fill/w_1280,h_1792,q_75,strp/vikram_poster_by_tyrionchandu_dennqn4-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTc5MiIsInBhdGgiOiJcL2ZcLzY2YWIwOTcyLWZmMDUtNDY1MC05YThlLTk3NWJmMTZmZTA3OVwvZGVubnFuNC01YWM0ZGRkYi0yOTFjLTQyZmQtYjIxZS0zMzMwYjA4MzFkM2YuanBnIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.w_cYvN3IHvBwgi9nV83A8iB9qdg7x33CXlUUDjZY0Uo" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Vikram</h2>
+            <button class="watchlist-btn" onclick="goToMoviePage('m15.html')">Watch</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://wallpapercave.com/wp/wp6760554.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Master</h2>
+            <button class="watchlist-btn" onclick="goToMoviePage('m16.html')">Watch</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://e1.pxfuel.com/desktop-wallpaper/758/398/desktop-wallpaper-maari-2-movie-poster-maari-2-film.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Maari-2</h2>
+            <button class="watchlist-btn" onclick="goToMoviePage('m17.html')">Watch</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://wallpaperaccess.com/full/9656340.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Vedalam</h2>
+            <button class="watchlist-btn" onclick="goToMoviePage('m18.html')">Watch</button>
+          </div>
+        </div>
+      </div>
+    </div><br><br><br><br><br><br>
+    <h1 class="title">hotstar specials</h1>
+    <div class="movies-list">
+      <button class="pre-btn" title="btn"><img src="pre.png" alt="" /></button>
+      <button class="nxt-btn" title="btn"><img src="nxt.png" alt="" /></button>
+      <div class="card-container">
+        <div class="card">
+          <img src="https://i.pinimg.com/736x/86/c2/d6/86c2d6d9d1a41c25f579b1d3856a4b35.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Mirzapur</h2>
+            <button class="watchlist-btn" onclick="goToMoviePage('m21.html')">Watch</button>
+          </div>
+        </div>
+        <div class="card">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhcrv1moLvIFY_Uhsb47sYrNCOxXsIxpWQT3N-66sy6YckiGtFB_SqdJ0X2Pvo4nB3-gtQbaGY82JLbLAY8oA44c0gqxmBM7bPEokMwE6iP8qb_OyyiPDu6ns6woQC6NLoXejQY1RG0a8WINKliFWY2WXSC4e5EdSwvPKa_GzkFOucmP6HCLcafJIpIvg/s718/Scam-1992-The-Harshad-Mehta-Story-S01-2020-Hindi-Sony-Live-Complete-Web-Series-720p-HDRip-1.4GB-Download.jpg" class="card-img" alt="" />
+                <div class="card-body">
+                  <h2 class="name">Scam 1992</h2>
+                  <button class="watchlist-btn" onclick="goToMoviePage('m22.html')">Watch</button>
+                </div>
+              </div>
+              <div class="card">
+                    <img src="https://w0.peakpx.com/wallpaper/224/409/HD-wallpaper-money-heist-berlin-dali-dali-mask-lacasa-lacasa-de-papel-professor.jpg" class="card-img" alt="" />
+                    <div class="card-body">
+                      <h2 class="name">Money Heist</h2>
+                      <button class="watchlist-btn" onclick="goToMoviePage('m23.html')">Watch</button>
+                    </div>
+                  </div>
+                  <div class="card">
+                        <img src="https://4kwallpapers.com/images/wallpapers/the-boys-2023-1920x1080-13253.png" class="card-img" alt="" />
+                        <div class="card-body">
+                          <h2 class="name">The Boys</h2>
+                          <button class="watchlist-btn" onclick="goToMoviePage('m24.html')">Watch</button>
+                        </div>
+                      </div>
+                      <div class="card">
+                            <img src="https://orkfriend.com/wp-content/uploads/2023/03/Farzi-Season-1-Download.jpg" class="card-img" alt="" />
+                            <div class="card-body">
+                              <h2 class="name">Farzi</h2>
+                              <button class="watchlist-btn" onclick="goToMoviePage('m25.html')">Watch</button>
+                            </div>
+                          </div>
+                          <div class="card">
+                                <img src="https://image.tmdb.org/t/p/w500/dDlEmu3EZ0Pgg93K2SVNLCjCSvE.jpg" class="card-img" alt="" />
+                                <div class="card-body">
+                                  <h2 class="name">Squid Game</h2>
+                                  <button class="watchlist-btn" onclick="goToMoviePage('m26.html')">Watch</button>
+                                </div>
+                              </div>
+                              <div class="card">
+                                    <img src="https://www.themoviedb.org/t/p/original/v9rg012OtFGxXK6tO9Jq2BOWesk.jpg" class="card-img" alt="" />
+                                    <div class="card-body">
+                                      <h2 class="name">Game of Thrones</h2>
+                                      <button class="watchlist-btn" onclick="goToMoviePage('m27.html')">Watch</button>
+                                    </div>
+                                  </div>
+                                  <div class="card">
+                                        <img src="https://m.media-amazon.com/images/M/MV5BZjgyMDkzMjAtMWNlZS00OTkzLWI2MzItN2JiZmUzM2VkMDFiXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_FMjpg_UX1000_.jpg" class="card-img" alt="" />
+                                        <div class="card-body">
+                                          <h2 class="name">The Railway men</h2>
+                                          <button class="watchlist-btn" onclick="goToMoviePage('m28.html')">Watch</button>
+                                        </div>
+                                      </div>
+                                      <div class="card">
+                                            <img src="https://flxt.tmsimg.com/assets/p20066125_b_v13_aa.jpg" class="card-img" alt="" />
+                                            <div class="card-body">
+                                              <h2 class="name">The Family man</h2>
+                                              <button class="watchlist-btn" onclick="goToMoviePage('m29.html')">Watch</button>
+                                            </div>
+      </div>
+    </div><br><br><br><br><br><br>
+    <h1 class="title">Movies</h1>
+    <div class="movies-list">
+      <button class="pre-btn" title="btn"><img src="pre.png" alt="" /></button>
+      <button class="nxt-btn" title="btn"><img src="nxt.png" alt="" /></button>
+      <div class="card-container">
+        <div class="card">
+          <img src="https://www.idlebrain.com/images5/wp-2raghuvaranbtech1024.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Raghuvaran B.Tech</h2>
+            <button class="watchlist-btn" onclick="goToMoviePage('m31.html')">Watch</button>
+          </div>
+        </div>
+        <div class="card">
+                <img src="https://www.newsintv.com/wp-content/uploads/2022/04/sivakarthikeyan-don-poster.jpg" class="card-img" alt="" />
+                <div class="card-body">
+                  <h2 class="name"> Don</h2>
+                  <button class="watchlist-btn" onclick="goToMoviePage('m32.html')">Watch</button>
+                </div>
+              </div>
+              <div class="card">
+                    <img src="https://m.media-amazon.com/images/M/MV5BY2U4NmIzYzgtNmU1OS00ODgyLTg1ZDktZGIwZTU0NTA4ZDJjXkEyXkFqcGdeQXVyNjc3MjQzNTI@._V1_.jpg" class="card-img" alt="" />
+                    <div class="card-body">
+                      <h2 class="name">Happy Day's</h2>
+                      <button class="watchlist-btn" onclick="goToMoviePage('m33.html')">Watch</button>
+                    </div>
+                  </div>
+                  <div class="card">
+                        <img src="https://pix1.wapkizfile.info/download/81450ce00fd036c1c7a207bfc6885b87/filmy4wap+wapkiz+com/Kirrak-Party-2018-Hindi-Telugu-Dual-Audio-UnCut-Movie-HD-ESub-(ww4.filmy4wap.app).jpg" class="card-img" alt="" />
+                        <div class="card-body">
+                          <h2 class="name">Kiraak party</h2>
+                          <button class="watchlist-btn" onclick="goToMoviePage('m34.html')">Watch</button>
+                        </div>
+                      </div>
+                      <div class="card">
+                            <img src="https://www.cinemaclock.com/images/posters/1000x1500/93/mad-2023-orig-poster.jpg" class="card-img" alt="" />
+                            <div class="card-body">
+                              <h2 class="name">MAD</h2>
+                              <button class="watchlist-btn" onclick="goToMoviePage('m35.html')">Watch</button>
+                            </div>
+                          </div>
+                          <div class="card">
+                                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/003d91196052999.6618f555efe6e.jpg" class="card-img" alt="" />
+                                <div class="card-body">
+                                  <h2 class="name">Aavesham</h2>
+                                  <button class="watchlist-btn" onclick="goToMoviePage('m36.html')">Watch</button>
+                                </div>
+                              </div>
+                              <div class="card">
+                                    <img src="https://ww1.naasongs.app/wp-content/uploads/2024/06/Committee-Kurrollu-2024-Aa-Rojulu-Malli-Raavu.jpg" class="card-img" alt="" />
+                                    <div class="card-body">
+                                      <h2 class="name">Committee Kurrollu</h2>
+                                      
+                                      <button class="watchlist-btn" onclick="goToMoviePage('m37.html')">Watch</button>
+                                    </div>
+                                  </div>
+                                  <div class="card">
+                                        <img src="https://m.media-amazon.com/images/M/MV5BZGFiYjQ5NjItZmVjMS00OTdmLWI2ZGQtNmRkNzA1YzQ5ZTFmXkEyXkFqcGdeQXVyNDc2NzU1MTA@._V1_FMjpg_UX1000_.jpg" class="card-img" alt="" />
+                                        <div class="card-body">
+                                          <h2 class="name">Hushaaru</h2>
+                                          <button class="watchlist-btn" onclick="goToMoviePage('m38.html')">Watch</button>
+                                        </div>
+                                      </div>
+      </div>
+    </div>
+    <script>
+  function goToMoviePage(pageUrl) {
+      window.location.href = pageUrl;
+  }
+
+        let movies = [
+
+  {
+    name: "Devara Part - 1",
+    des:
+      "An epic action saga set against coastal lands, which briefs about rip-roaring ,emotionally charged incidents in the periodic timeline, also comprises the titular protagonist being the rescuer to deprived and fear to evildoers.",
+    image: "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202409/ntrs-film-devara-185803597-16x9.jpg?VersionId=Fw87.buINaU6nVHMloALNZF.bfrVfTdT&size=690:388"
+  },
+  {
+    name: "OG",
+    des:
+      "After vanishing from Mumbai's underworld for a decade, mob boss Ojas Gambheera resurfaces seeking vengeance against rival crime lords..",
+    image: "https://www.pinkvilla.com/images/2024-02/865775309_og-p.jpg"
+  },
+  {
+    name: "Game Changer",
+
+    des:
+      "An honest IAS officer's fight against a corrupt political system through fair and transparent elections",
+    image: "https://www.hindustantimes.com/ht-img/img/2024/03/26/1600x900/Game_Changer_1711432207792_1711432214468.jpg"
+  },
+  {
+    name: "kannappa",
+    des:
+      "An atheist hunter Kannappa becomes a devotee of Lord Shiva and plucked out his eyes in an act of devotion.",
+    image: "https://neplych.com/wp-content/uploads/2024/06/Kannappa-Movie-Poster.jpg"
+  },
+  {
+    name: "Pushpa: The Rule - Part 2",
+    des:
+      "The clash is on as Pushpa and Bhanwar Singh continue their rivalry in this epic conclusion to the two-parted action drama.",
+    image: "https://images.indianexpress.com/2023/04/allu-arjun-pushpa-2-1200.jpg"
+  }
+];
+const carousel = document.querySelector(".carousel");
+let sliders = [];
+
+let slideIndex = 0; // to track current slide index.
+const createSlide = () => {
+  if (slideIndex >= movies.length) {
+    slideIndex = 0;
+  }
+
+  // creating DOM element
+  let slide = document.createElement("div");
+  var imgElement = document.createElement("img");
+  let content = document.createElement("div");
+  let h1 = document.createElement("h1");
+  let p = document.createElement("p");
+
+  // attaching all elements
+  imgElement.appendChild(document.createTextNode(""));
+  h1.appendChild(document.createTextNode(movies[slideIndex].name));
+  p.appendChild(document.createTextNode(movies[slideIndex].des)); 
+  content.appendChild(h1);
+  content.appendChild(p);
+  slide.appendChild(content);
+  slide.appendChild(imgElement);
+  carousel.appendChild(slide);
+  // setting up image
+  imgElement.src = movies[slideIndex].image;
+  slideIndex++;
+
+  // setting elements classname
+  slide.className = "slider";
+  content.className = "slide-content";
+  h1.className = "movie-title";
+  p.className = "movie-des";
+
+  sliders.push(slide);
+
+  if (sliders.length) {
+    sliders[0].style.marginLeft = `calc(-${100 * (sliders.length - 2)}% - ${
+      30 * (sliders.length - 2)
+    }px)`;
+  }
+};
+
+for (let i = 0; i < 3; i++) {
+  createSlide();
+}
+
+setInterval(() => {
+  createSlide();
+}, 3000);
+
+/// video cards
+
+const videoCards = [...document.querySelectorAll(".video-card")];
+
+videoCards.forEach((item) => {
+  item.addEventListener("mouseover", () => {
+    let video = item.children[1];
+    video.play();
+  });
+  item.addEventListener("mouseleave", () => {
+    let video = item.children[1];
+    video.pause();
+  });
+});
+
+// card sliders
+
+let cardContainers = [...document.querySelectorAll(".card-container")];
+let preBtns = [...document.querySelectorAll(".pre-btn")];
+let nxtBtns = [...document.querySelectorAll(".nxt-btn")];
+
+cardContainers.forEach((item, i) => {
+  let containerDimensions = item.getBoundingClientRect();
+  let containerWidth = containerDimensions.width;
+
+  nxtBtns[i].addEventListener("click", () => {
+    item.scrollLeft += containerWidth - 200;
+  });
+
+  preBtns[i].addEventListener("click", () => {
+    item.scrollLeft -= containerWidth + 200;
+  });
+});
+
+    </script>
+  </body>
+</html>
+
