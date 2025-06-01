@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MRK Subscribe Table</title>
+    <link rel="shortcut icon" href="https://t4.ftcdn.net/jpg/05/23/15/69/360_F_523156902_445BkTzOZ2bc4EltqiZjYye7YnHy2cvS.jpg" type="image/x-icon">
+    <style>
+        /* General Styles */
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #192031;
+        }
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            padding:20px;
+            color: #f7f3f3;
+            font-size: xx-large;
+        }
+        /* Flexbox Pricing Table */
+        .pricing-table {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            padding: 2rem;
+        }
+        .columns {
+            flex: 1 1 30%;
+            max-width: 30%;
+            min-width: 280px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #fff;
+        }
+        .price {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .price .header {
+            background-color: #192031 ;
+            color: white;
+            font-size: 25px;
+            padding: 1rem;
+        }
+        .price li {
+            border-bottom: 1px solid #eee;
+            padding: 20px;
+            text-align: center;
+        }
+        .price li:last-child {
+            border-bottom: none;
+        }
+        .button {
+            background-color: #5289c1;
+            border: none;
+            color: white;
+            padding: 10px 25px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            display: inline-block;
+            margin-top: 1rem;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #1f80e0;
+        }
+    .hero__subtitle{
+    font-size: xx-large;
+    color: #f8f8f8;
+    text-align: center;
+  }
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .columns {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+          
+        }
+    </style>
+</head>
+<body>
+<h2>MRK Subscribe Table</h2>
+<p class="hero__subtitle">Watch anywhere and cancel anytime.</p>
+<div class="pricing-table">
+    <div class="columns">
+        <ul class="price">
+            <li class="header">Basic</li>
+            <li> ₹199 INR/month</li>
+            <li>Unlimited ad-free movies,<br> TV shows, and mobile games</li>
+            <li>Watch on 1 supported device at a time</li>
+            <li>Watch in 720p (HD)</li>
+            <li>Download on 1 supported device at a time</li>
+            <li><a href="#" class="button">Subscribe</a></li>
+        </ul>
+    </div>
+    <div class="columns">
+        <ul class="price">
+            <li class="header">Standard</li>
+            <li>₹499 INR/month</li>
+            <li>Unlimited ad-free movies,<br> TV shows, and mobile games</li>
+            <li>Watch on 2 supported devices at a time</li>
+            <li>Watch in 1080p (Full HD)</li>
+            <li>Download on 2 supported devices at a time</li>
+            <li><a href="#" class="button">Subscribe </a></li>
+        </ul>
+    </div>
+    <div class="columns">
+        <ul class="price">
+            <li class="header">Premium</li>
+            <li>₹649 INR/month</li>
+            <li>Unlimited ad-free movies,<br> TV shows, and mobile games</li>
+            <li>Watch on 4 supported devices at a time</li>
+            <li>Watch in 4K (Ultra HD) + HDR</li>
+            <li>Download on 6 supported devices at a time</li>
+            <li><a href="#" class="button">Subscribe </a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

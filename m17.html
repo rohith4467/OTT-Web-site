@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USA Travel Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        color: #0a0a0a;
+    }
+
+    header {
+        background-color: black;
+        color: white;
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo h1 {
+        margin-left: 66px;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+    }
+
+    nav ul li {
+        margin-right: 20px;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .home {
+            background-image: url('https://images.unsplash.com/photo-1523319244021-da2f2196547a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            /* background-image: url('https://media.istockphoto.com/id/1953999431/photo/golden-gate-bridge.webp?a=1&b=1&s=612x612&w=0&k=20&c=EhZI0-JnX3IrUe-7pP8HNj8FZJFZosXe90qiVc3fTpI='); */
+            /* background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/0c/GoldenGateBridge-001.jpg'); */
+            /* background-image: url('https://seoimgak.mmtcdn.com/blog/sites/default/files/images/Golden-Gate.jpg'); */
+            /* background-image: url('https://media2.thrillophilia.com/images/photos/000/179/361/original/1573882445_shutterstock_273811460.jpg?w=753&h=450&dpr=1.5'); */
+            height: 700px;
+            background-size: cover;
+            /* background-position:bottom; */
+            /* background-repeat: no-repeat; */
+        }
+
+        .heading1 {
+            text-align: center;
+            
+            /* font-family: "Pinyon Script", cursive; */
+            font-size: 3.3em;
+            padding-top: 250px;
+            color: white;
+        }
+        section.about,
+        section.places {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        section.about h2,
+        section.places h2 {
+            font-size: 55px;
+            margin-bottom: 25px;
+        }
+
+        .about p {
+            font-size: 30px;
+        }
+
+        section #places {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .place {
+            width: 30%;
+            margin-bottom: 20px;
+        }
+
+        .place img {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+            margin: auto;
+        }
+
+        .place h3 {
+            margin-top: 10px;
+            font-size: 24px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer .social a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        article {
+            margin-bottom: 0;
+            margin: 20px auto;
+
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        article p {
+            line-height: 3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>USA</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="./Home.html">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#food">FOOD</a></li>
+                <li><a href="#places">PLACES TO VISIT</a></li>
+                <li><a href="#">GALLERY</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="home">
+        <h1 class="heading1">Discover the Land of Diversity and Adventure.</h1>
+        
+    </section>
+
+    <section id="about" class="about">
+        <h2>About the Tour</h2>
+        <p>A tour of the USA offers diverse experiences, from bustling cities like New York to natural wonders like the Grand Canyon. Each region has unique culture, cuisine, and landscapes, promising unforgettable adventures across America.</p>
+    </section>
+
+    <section class="places">
+        <h2>Top Places to Visit</h2>
+
+        <div id="places">
+            <div class="place">
+                <img src="https://media.istockphoto.com/id/1225159021/photo/liberty-island-overlooking-manhattan-skyline-cities-under-covid-19-series.jpg?s=612x612&w=0&k=20&c=n9QbgN_EbKLkkWpHgp6T4DRRFu4iNih-3lIM6fuKbIw="
+                    alt="Statue of Liberty">
+                <h3>Statue of Liberty</h3>
+                <p>Iconic symbol of freedom with views of NYC's skyline.</p>
+            </div>
+            <div class="place">
+                <img src="https://media.istockphoto.com/id/1758789989/photo/central-park-manhattan-and-autumn.webp?a=1&b=1&s=612x612&w=0&k=20&c=JSNioFIQfMxpuj-Ye0iK87KJ4kqkLfA8atZiKIFr7xw="
+                    alt="Central Park">
+                <h3>Central Park</h3>
+                <p>An urban oasis offering walking paths, boating, and seasonal events.</p>
+            </div>
+            <div class="place">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/cd/72/27/grand-canyon-skywalk.jpg?w=1400&h=800&s=1"
+                    alt="Grand Canyon Skywalk">
+                <h3>Grand Canyon Skywalk</h3>
+                <p>A glass bridge with breathtaking views over the canyon.</p>
+            </div>
+            <div class="place">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/10/2f/2d/milwaukee.jpg?w=1400&h=1400&s=1"
+                    alt=" Mitchell Park">
+                <h3> Mitchell Park</h3>
+                <p>"The Domes," this conservatory features three unique, domed gardens with tropical, arid, and seasonal themes.</p>
+            </div>
+            <div class="place">
+                <img src="https://media.istockphoto.com/id/1136437406/photo/san-francisco-skyline-with-oakland-bay-bridge-at-sunset-california-usa.jpg?s=612x612&w=0&k=20&c=JVBBZT2uquZbfY0njYHv8vkLfatoM4COJc-lX5QKYpE="
+                    alt="Golden Gate Bridge">
+                <h3>Golden Gate Bridge</h3>
+                <p> An architectural marvel with scenic views over the bay</p>
+            </div>
+            <div class="place">
+                <img src="https://www.thehawaiiplan.com/wp-content/uploads/2012/11/261202181_3fa0c652d7.jpg"
+                    alt="Waikiki Beach">
+                <h3>Waikiki Beach</h3>
+                <p>Famous surf spot with crystal-clear waters and sandy shores.</p>
+            </div>
+            <div class="place">
+                <img src="https://www.usnews.com/object/image/00000189-0c9a-d824-afcd-1d9aaf9f0001/kauai-boat-main-2023-getty.jpg?update-time=1688133797340&size=responsive640"
+                    alt="Na Pali Coast">
+                <h3>Na Pali Coast</h3>
+                <p>Scenic cliffs and waterfalls along Kauai’s shoreline.</p>
+            </div>
+            <div class="place">
+                <img src="https://media.istockphoto.com/id/1488667970/photo/stunning-view-overlooking-iconic-horseshoe-falls-at-niagara-falls-from-canada-jpg.jpg?s=612x612&w=0&k=20&c=GCW2KvdQy76jEZKgqYECk6vgKpYQ8Qg6BUVG4uA23hI="
+                    alt="Niagara Falls">
+                <h3>Niagara Falls</h3>
+                <p>This classic boat tour takes you right up to the base of the falls, where you’ll feel the mist and hear the roar up close.</p>
+            </div>
+            <div class="place">
+                <img src="https://media.istockphoto.com/id/638557442/fr/photo/quartier-en-fleurs-de-cerisier.jpg?s=612x612&w=0&k=20&c=FELSTzERrh7NW7JAyfpeOyLEpQJS_IDF96bOb1sTGMs="
+                    alt=" Kenwood">
+                <h3> Kenwood</h3>
+                <p>Kenwood is a hidden gem for cherry blossoms, featuring tree-lined streets that bloom vibrantly every spring.</p>
+            </div>
+        </div>
+    </section>
+    <article id="food">
+        <h2>Food Adventures</h2>
+        <p>Food in the USA combines comforting classics and bold regional flavors, reflecting the country’s diverse cultural influences in every bite.</p><br>
+        <div style="display: flex; justify-content: space-around;">
+            <div style="text-align: center;">
+                <img src="https://media.istockphoto.com/id/1265231503/photo/new-york-vegetable-pizza.jpg?s=612x612&w=0&k=20&c=iWfsbzrGD0WumLSZD7wuKAgFlBd1q03BOPhohRUk28U="
+                    alt="New York-Style Pizza " style="width: 250px; height: 250px; object-fit: cover; border-radius: 3%;">
+                <p>New York-Style Pizza</p>
+            </div>
+            <div style="text-align: center;">
+                <img src="https://media.istockphoto.com/id/1026644250/photo/bbq-pork-ribs.jpg?s=612x612&w=0&k=20&c=iYCKNSuFMmw8ITpkVpdi9Xeka_GXulXl4lSi6oFPSKQ="
+                    alt="Southern Barbecue " style="width: 250px; height: 250px; object-fit: cover; border-radius: 3%;">
+                <p>Southern Barbecue </p>
+            </div>
+            <div style="text-align: center;">
+                <img src="https://media.istockphoto.com/id/589101300/photo/cheesecake-with-fresh-berries.jpg?s=612x612&w=0&k=20&c=v1M6Unzo79IU0v6Ln805Roy844Bi-EAjTfmjkV97Fuo="
+                    alt="Cheesecake" style="width: 250px; height: 250px; object-fit: cover; border-radius: 3%;">
+                <p>Cheesecake</p>
+            </div>
+            <div style="text-align: center;">
+                <img src="https://media.istockphoto.com/id/828145282/photo/homemade-apple-pie-on-a-wood-surface.jpg?s=612x612&w=0&k=20&c=KI4PkjalxwTu7JCQjPbiUrsrrPyIvw86zas52B_DJko="
+                    alt="Apple Pie" style="width: 250px; height: 250px; object-fit: cover; border-radius: 3%;">
+                <p>Apple Pie</p>
+            </div>
+        </div>
+
+        <p>New York-Style Pizza is thin, crispy, and deliciously classic, ideal for folding and enjoying on the go.</p>
+        <p>Southern Barbecue is smoky, tender, and packed with bold, savory flavors.</p>
+        <p>Cheesecake is luxuriously creamy and dense, with a perfect hint of tang.</p>
+        <p>Apple Pie is cozy and nostalgic, with warm, spiced apples in a buttery crust.</p>
+    </article>
+
+
+    <footer>
+        <p>&copy; 2024 UK Tour Blog | All rights reserved</p>
+        <div class="social">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+    </footer>
+</body>
+
+</html>
